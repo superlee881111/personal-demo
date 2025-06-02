@@ -1,0 +1,55 @@
+server:
+  port: 8005
+#  servlet:
+#    context-path: /app8005
+spring:
+  application:
+    name: hello
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.1.13:8848
+        register-enabled: true
+        metadata:
+          nacos.instanceId: ${spring.application.name}#${random.value}
+      config:
+        server-addr: 192.168.1.13:8848
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://192.168.1.13:5432/1_springboot
+    username: postgres
+    password: postgres
+
+  thymeleaf:
+    cache: false
+
+  devtools:
+    livereload:
+      enabled: false
+    restart:
+      enabled: false
+      additional-paths: src/main/java #重启目录
+      exclude: static/**,public/**,META-INF/**  //     # 设置不需要重启的目录
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*" #暴露所有节点
+  endpoint:
+    health:
+      show-details: ALWAYS  #显示详细信息
+
+
+logging:
+  file:
+    path: log/demo-8005
+    max-size: 10MB
+
+#feign:
+#  hystrix:
+#    enabled: true
+
+
+
