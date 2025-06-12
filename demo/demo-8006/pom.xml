@@ -9,10 +9,10 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>demo-8005</artifactId>
+    <artifactId>demo-8006</artifactId>
 
-    <name>demo-8005</name>
-    <description>demo-8005 service</description>
+    <name>demo-8006</name>
+    <description>demo-8006 service</description>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -34,6 +34,7 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
+
         <!--引入nacos 注册中心依赖-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
@@ -76,7 +77,6 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-hystrix</artifactId>
-            <version>1.4.7.RELEASE</version>
         </dependency>
         <!-- 代码生成 -->
         <dependency>
@@ -87,7 +87,6 @@
             <groupId>org.apache.velocity</groupId>
             <artifactId>velocity-engine-core</artifactId>
         </dependency>
-
         <dependency>
             <groupId>de.codecentric</groupId>
             <artifactId>spring-boot-admin-starter-client</artifactId>
@@ -99,36 +98,30 @@
         </dependency>
 
     </dependencies>
+
     <build>
-        <finalName>demo-8005</finalName>
+        <finalName>demo-8006</finalName>
         <resources>
+            <!-- 项目打包时会将java目录中的*.xml文件也进行打包 -->
             <resource>
-                <directory>src/main/resources</directory>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
                 <filtering>true</filtering>
             </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.yml</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
         </resources>
-<!--            <plugins>-->
-<!--                <plugin>-->
-<!--                    <groupId>org.springframework.boot</groupId>-->
-<!--                    <artifactId>spring-boot-maven-plugin</artifactId>-->
-<!--                    &lt;!&ndash;打开开关&ndash;&gt;-->
-<!--                    <configuration>-->
-<!--                        <fork>true</fork>-->
-<!--                    </configuration>-->
-<!--                </plugin>-->
-<!--            </plugins>-->
-
-<!--        <pluginManagement>
+        <pluginManagement>
             <plugins>
-                <plugin>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-maven-plugin</artifactId>
-                    &lt;!&ndash;没有该项配置，热部署不会起作用&ndash;&gt;
-                    <configuration>
-                        <fork>true</fork>
-                    </configuration>
-                </plugin>
+
             </plugins>
-        </pluginManagement>-->
+        </pluginManagement>
     </build>
 </project>

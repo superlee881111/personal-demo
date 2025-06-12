@@ -1,0 +1,12 @@
+server:
+  port: 8006
+spring:
+  application:
+    name: demo-cmp
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.10.81:8848
+        register-enabled: true
+      config:
+        server-addr: 192.168.10.81:8848
