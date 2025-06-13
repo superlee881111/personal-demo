@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.common.db.mapper.SysDatabaseInfoMapper">
+  <resultMap id="BaseResultMap" type="org.example.common.db.entity.SysDatabaseInfo">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="db_name" jdbcType="VARCHAR" property="dbName" />
+    <result column="jdbc_driver" jdbcType="VARCHAR" property="jdbcDriver" />
+    <result column="user_name" jdbcType="VARCHAR" property="userName" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="jdbc_url" jdbcType="VARCHAR" property="jdbcUrl" />
+    <result column="remarks" jdbcType="VARCHAR" property="remarks" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+
+</mapper>

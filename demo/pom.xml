@@ -11,6 +11,7 @@
     <modules>
         <module>demo-8005</module>
         <module>demo-8006</module>
+        <module>micro-service-cloud-common-api</module>
     </modules>
 
     <name>demo</name>
@@ -147,11 +148,11 @@
                 <artifactId>spring-cloud-starter-netflix-hystrix-dashboard</artifactId>
                 <version>${spring-cloud-starter-netflix-hystrix-dashboard}</version>
             </dependency>
-<!--            <dependency>
+            <dependency>
                 <groupId>org.example</groupId>
                 <artifactId>micro-service-cloud-common-api</artifactId>
                 <version>${micro-service-cloud-common-api}</version>
-            </dependency>-->
+            </dependency>
             <dependency>
                 <groupId>io.minio</groupId>
                 <artifactId>minio</artifactId>
