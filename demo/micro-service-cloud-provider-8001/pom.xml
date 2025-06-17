@@ -9,10 +9,9 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>demo-8006</artifactId>
+    <artifactId>micro-service-cloud-provider-8001</artifactId>
 
-    <name>demo-8006</name>
-    <description>demo-8006 service</description>
+    <name>micro-service-cloud-provider-8001</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -30,11 +29,18 @@
             <artifactId>junit</artifactId>
             <scope>test</scope>
         </dependency>
+        <!--Spring Boot 测试-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
-
         <!--引入nacos 注册中心依赖-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
@@ -44,6 +50,10 @@
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
         </dependency>
         <dependency>
             <groupId>org.postgresql</groupId>
@@ -66,17 +76,12 @@
             <artifactId>mybatis-plus</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <optional>true</optional>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-generator</artifactId>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-hystrix</artifactId>
         </dependency>
         <!-- 代码生成 -->
         <dependency>
@@ -88,6 +93,35 @@
             <artifactId>velocity-engine-core</artifactId>
         </dependency>
         <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-annotations</artifactId>
+        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.example</groupId>-->
+<!--            <artifactId>micro-service-cloud-common-api</artifactId>-->
+<!--        </dependency>-->
+        <dependency>
+            <groupId>io.minio</groupId>
+            <artifactId>minio</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+            <version>4.12.0</version>
+        </dependency>
+        <!--json解析-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+            <version>1.5</version>
+        </dependency>
+
+        <dependency>
             <groupId>de.codecentric</groupId>
             <artifactId>spring-boot-admin-starter-client</artifactId>
         </dependency>
@@ -97,10 +131,20 @@
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
 
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-data-redis</artifactId>-->
+<!--        </dependency>-->
+<!--        &lt;!&ndash; 如果使用Lettuce作为Redis客户端，需要添加此依赖 &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>io.lettuce</groupId>-->
+<!--            <artifactId>lettuce-core</artifactId>-->
+<!--        </dependency>-->
+
     </dependencies>
 
     <build>
-        <finalName>demo-8006</finalName>
+        <finalName>micro-service-cloud-provider-8001</finalName>
         <resources>
             <!-- 项目打包时会将java目录中的*.xml文件也进行打包 -->
             <resource>
@@ -108,7 +152,7 @@
                 <includes>
                     <include>**/*.xml</include>
                 </includes>
-                <filtering>true</filtering>
+                <filtering>false</filtering>
             </resource>
             <resource>
                 <directory>src/main/resources</directory>

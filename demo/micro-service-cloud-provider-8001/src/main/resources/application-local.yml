@@ -1,0 +1,65 @@
+server:
+  port: 8001
+#  servlet:
+#    context-path: /provider1
+spring:
+  application:
+    name: provider1
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.1.6:8848
+        register-enabled: true
+      config:
+        server-addr: 192.168.1.6:8848
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://192.168.1.6:5432/springboot8001
+    username: postgres
+    password: postgres
+#  redis:
+#    host: 192.168.1.6
+#    port: 6379
+#    password:
+#    database: 0
+#    lettuce:
+#      pool:
+#        max-active: 8  # 连接池最大连接数（使用Lettuce时）
+#        max-wait: -1ms  # 连接池最大阻塞等待时间（使用Lettuce时）
+#        max-idle: 8   # 连接池中的最大空闲连接（使用Lettuce时）
+#        min-idle: 0   # 连接池中的最小空闲连接（使用Lettuce时）
+
+
+mybatis-plus:
+  mapper-locations: org/example/**/mapper/xml/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
+logging:
+  file:
+    path: log/provider-8001/
+    max-size: 10MB
+    name:
+
+# 文件存储服务器
+##文件上传路径配置
+#yunnuo:
+#  profile: D:/src/demo/upload
+#minio配置
+#minio:
+#  endpoint: http://192.168.1.6:9000   #默认端口9000
+#  accessKey: minioadmin #默认用户名
+#  secretKey: minioadmin #默认密码
+#  bucketName: my-bucket #桶名
+
+
+
+
+

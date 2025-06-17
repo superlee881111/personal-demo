@@ -1,11 +1,10 @@
 package org.example.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
 import org.example.entity.SysDatabaseInfo;
 
 @Mapper
-public interface HelloMapper {
+public interface HelloTMapper {
     int deleteByPrimaryKey(Long id);
 
     int insert(SysDatabaseInfo record);

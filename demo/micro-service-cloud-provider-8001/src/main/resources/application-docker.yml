@@ -1,0 +1,13 @@
+server:
+  port: ${SERVER_PORT}
+
+spring:
+  application:
+    name: ${APP_NAME}
+  cloud:
+    nacos:
+      discovery:
+        server-addr: ${REGISTER_HOST}
+        register-enabled: true
+      config:
+        server-addr: ${REGISTER_HOST}

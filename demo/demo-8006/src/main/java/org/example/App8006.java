@@ -14,6 +14,7 @@ import org.springframework.context.annotation.ComponentScan;
  */
 
 @ComponentScan("org.example.*")
+//@MapperScan("org.example.mapper.HelloTMapper")
 @EnableCircuitBreaker
 @EnableDiscoveryClient
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})

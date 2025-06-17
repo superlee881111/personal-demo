@@ -2,7 +2,8 @@ package org.example.controller;
 
 import org.example.entity.SysDatabaseInfo;
 
-import org.example.mapper.HelloMapper;
+
+import org.example.mapper.HelloTMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
@@ -13,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RefreshScope
-public class HelloController {
+public class HelloTController {
 
     @Value("${server.port}")
     String port;
@@ -22,7 +23,7 @@ public class HelloController {
     String config;
 
 //    @Autowired
-//    HelloMapper helloMapper;
+//    HelloTMapper helloMapper;
 
     @RequestMapping("/gatewayApp/home")
     public String home(String name) {

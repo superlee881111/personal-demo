@@ -12,6 +12,8 @@
         <module>demo-8005</module>
         <module>demo-8006</module>
         <module>micro-service-cloud-common-api</module>
+        <module>micro-service-cloud-provider-8001</module>
+        <module>micro-service-cloud-provider-8001-lib</module>
     </modules>
 
     <name>demo</name>
