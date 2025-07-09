@@ -10,7 +10,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>micro-service-cloud-provider-8001</artifactId>
-
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
     <name>micro-service-cloud-provider-8001</name>
 
     <properties>
@@ -93,8 +94,14 @@
             <artifactId>velocity-engine-core</artifactId>
         </dependency>
         <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-boot-starter</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+        <dependency>
             <groupId>io.swagger</groupId>
             <artifactId>swagger-annotations</artifactId>
+            <version>1.6.14</version>
         </dependency>
 <!--        <dependency>-->
 <!--            <groupId>org.example</groupId>-->
@@ -131,16 +138,19 @@
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
 
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.boot</groupId>-->
-<!--            <artifactId>spring-boot-starter-data-redis</artifactId>-->
-<!--        </dependency>-->
-<!--        &lt;!&ndash; 如果使用Lettuce作为Redis客户端，需要添加此依赖 &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>io.lettuce</groupId>-->
-<!--            <artifactId>lettuce-core</artifactId>-->
-<!--        </dependency>-->
-
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+        <!-- 如果使用Lettuce作为Redis客户端，需要添加此依赖 -->
+        <dependency>
+            <groupId>io.lettuce</groupId>
+            <artifactId>lettuce-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>lc01-core</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

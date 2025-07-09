@@ -37,6 +37,8 @@
         <spring-cloud-starter-hystrix>1.4.7.RELEASE</spring-cloud-starter-hystrix>
         <spring-cloud-starter-netflix-hystrix-dashboard>2.2.10.RELEASE</spring-cloud-starter-netflix-hystrix-dashboard>
         <micro-service-cloud-common-api>1.0.0</micro-service-cloud-common-api>
+        <core.version>1.0.0</core.version>
+        <deploy.version>1.0.0</deploy.version>
         <minio.version>8.5.10</minio.version>
         <spring-boot-dependencies>2.3.12.RELEASE</spring-boot-dependencies>
         <spring-cloud-dependencies>Hoxton.SR12</spring-cloud-dependencies>
@@ -154,6 +156,11 @@
                 <groupId>org.example</groupId>
                 <artifactId>micro-service-cloud-common-api</artifactId>
                 <version>${micro-service-cloud-common-api}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.example</groupId>
+                <artifactId>lc01-core</artifactId>
+                <version>${core.version}</version>
             </dependency>
             <dependency>
                 <groupId>io.minio</groupId>

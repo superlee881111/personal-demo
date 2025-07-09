@@ -1,4 +1,4 @@
-package org.example.common.db.entity;
+package org.example.common.db.table.entity;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -50,15 +50,6 @@ public class SysDatabaseInfo implements Serializable {
      */
     private Date createTime;
 
-    /**
-     * 作成時間
-     */
-    private Date dstart;
-
-    /**
-     * 作成時間
-     */
-    private Date dend;
 
     private static final long serialVersionUID = 1L;
 }

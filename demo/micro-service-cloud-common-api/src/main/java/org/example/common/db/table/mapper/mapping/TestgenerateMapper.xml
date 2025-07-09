@@ -2,9 +2,9 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.example.common.db.mapper.TestgenerateMapper">
+<mapper namespace="org.example.common.db.table.mapper.TestgenerateMapper">
 
-    <resultMap id="BaseResultMap" type="org.example.common.db.entity.Testgenerate">
+    <resultMap id="BaseResultMap" type="org.example.common.db.table.entity.Testgenerate">
             <result property="id" column="id" jdbcType="BIGINT"/>
             <result property="name" column="name" jdbcType="VARCHAR"/>
             <result property="role" column="role" jdbcType="VARCHAR"/>

@@ -1,9 +1,9 @@
-package org.example.common.db.service.impl;
+package org.example.common.db.table.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import org.example.common.db.entity.SysDatabaseInfo;
-import org.example.common.db.mapper.SysDatabaseInfoMapper;
-import org.example.common.db.service.SysDatabaseInfoService;
+import org.example.common.db.table.entity.SysDatabaseInfo;
+import org.example.common.db.table.mapper.SysDatabaseInfoMapper;
+import org.example.common.db.table.service.SysDatabaseInfoService;
 import org.springframework.stereotype.Service;
 
 @Service

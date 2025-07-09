@@ -23,7 +23,7 @@ public class HelloTController {
     String config;
 
 //    @Autowired
-//    HelloTMapper helloMapper;
+//    HelloTMapper helloTMapper;
 
     @RequestMapping("/gatewayApp/home")
     public String home(String name) {

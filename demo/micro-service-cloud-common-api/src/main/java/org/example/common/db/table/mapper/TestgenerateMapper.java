@@ -1,7 +1,7 @@
-package org.example.common.db.mapper;
+package org.example.common.db.table.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
-import org.example.common.db.entity.Testgenerate;
+import org.example.common.db.table.entity.Testgenerate;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**

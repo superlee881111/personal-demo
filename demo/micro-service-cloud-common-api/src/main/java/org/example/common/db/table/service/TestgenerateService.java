@@ -1,6 +1,6 @@
-package org.example.common.db.service;
+package org.example.common.db.table.service;
 
-import org.example.common.db.entity.Testgenerate;
+import org.example.common.db.table.entity.Testgenerate;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
