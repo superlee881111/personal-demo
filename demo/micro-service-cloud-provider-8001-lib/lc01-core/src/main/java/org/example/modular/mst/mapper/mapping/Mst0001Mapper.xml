@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.modular.mst.mapper.Mst0001Mapper">
+<select id="selectSysDatabaseInfo" parameterType="map"
+        resultType="org.example.common.db.table.entity.SysDatabaseInfo">
+    SELECT
+        id                                          -- ID
+         , db_name                                   -- データベース名称
+         , jdbc_driver                               -- JDBCの駆動タイプ
+         , user_name                                 -- ユーザー
+         , password                                  -- パスワード
+         , jdbc_url                                  -- JDBCのURL
+         , remarks                                   -- コメント
+         , create_time                               -- 作成時間
+    FROM
+        public.sys_database_info
+    WHERE
+        id = #{id}                                    -- ID
+    ORDER BY
+        id
+    </select>
+</mapper>
