@@ -104,6 +104,38 @@
             <artifactId>okhttp</artifactId>
             <version>4.12.0</version>
         </dependency>
+
+        <!-- Excel 操作 -->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>5.4.1</version>
+        </dependency>
+        <!-- 操作以 .xlsx 为后缀的 Excel -->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>5.4.1</version>
+        </dependency>
+
+<!--        &lt;!&ndash; easypoi &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>cn.afterturn</groupId>-->
+<!--            <artifactId>easypoi-base</artifactId>-->
+<!--            <version>4.4.0</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>cn.afterturn</groupId>-->
+<!--            <artifactId>easypoi-annotation</artifactId>-->
+<!--            <version>4.4.0</version>-->
+<!--        </dependency>-->
+
+<!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.jodconverter/jodconverter-core&ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.jodconverter</groupId>-->
+<!--            <artifactId>jodconverter-local</artifactId>-->
+<!--            <version>4.4.2</version>-->
+<!--        </dependency>-->
     </dependencies>
 
     <build>
