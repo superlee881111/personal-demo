@@ -22,7 +22,7 @@ public class SwaggerConfig {
                 .groupName("webApi")
                 .enable(true)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("org.example.modular.mst.controller"))
+                .apis(RequestHandlerSelectors.basePackage("org.example.modular.mst"))
                 .build();
     }
 

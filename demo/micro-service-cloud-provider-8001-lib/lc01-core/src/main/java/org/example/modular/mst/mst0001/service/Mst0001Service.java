@@ -1,8 +1,8 @@
-package org.example.modular.mst.service;
+package org.example.modular.mst.mst0001.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import org.example.modular.mst.parameter.paramIn.Mst0001InitParam;
-import org.example.modular.mst.parameter.paramOut.Mst0001InitResult;
+import org.example.modular.mst.mst0001.parameter.paramIn.Mst0001InitParam;
+import org.example.modular.mst.mst0001.parameter.paramOut.Mst0001InitResult;
 
 /**
  * <p>

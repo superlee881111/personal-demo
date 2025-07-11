@@ -1,7 +1,7 @@
-package org.example.modular.mst.data;
+package org.example.modular.mst.mst0001.data;
 
 import org.example.common.db.table.entity.SysDatabaseInfo;
-import org.example.modular.mst.parameter.paramOut.Mst0001InitResult;
+import org.example.modular.mst.mst0001.parameter.paramOut.Mst0001InitResult;
 
 public class Mst0001ToResult {
     private Mst0001ToResult() throws IllegalAccessException {throw new IllegalAccessException("Utility class");}

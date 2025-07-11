@@ -1,14 +1,14 @@
-package org.example.modular.mst.service.impl;
+package org.example.modular.mst.mst0001.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.example.common.db.table.entity.SysDatabaseInfo;
 import org.example.common.db.table.service.SysDatabaseInfoService;
-import org.example.modular.mst.data.Mst0001ToResult;
-import org.example.modular.mst.mapper.Mst0001Mapper;
-import org.example.modular.mst.parameter.paramIn.Mst0001InitParam;
-import org.example.modular.mst.parameter.paramOut.Mst0001InitResult;
-import org.example.modular.mst.service.Mst0001Service;
+import org.example.modular.mst.mst0001.data.Mst0001ToResult;
+import org.example.modular.mst.mst0001.mapper.Mst0001Mapper;
+import org.example.modular.mst.mst0001.parameter.paramOut.Mst0001InitResult;
+import org.example.modular.mst.mst0001.service.Mst0001Service;
+import org.example.modular.mst.mst0001.parameter.paramIn.Mst0001InitParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Import;
 @Import(value = {
         RedisConfig.class,
         SwaggerConfig.class,
+        MinioConfig.class,
 })
 public class Appconfig {
 

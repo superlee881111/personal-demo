@@ -1,4 +1,4 @@
-package org.example.modular.mst.mapper;
+package org.example.modular.mst.mst0001.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;

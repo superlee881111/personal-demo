@@ -1,12 +1,12 @@
-package org.example.modular.mst.controller;
+package org.example.modular.mst.mst0001.controller;
 
 import com.baomidou.mybatisplus.core.toolkit.ObjectUtils;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.example.common.lib.web.ResponseData;
-import org.example.modular.mst.parameter.paramIn.Mst0001InitParam;
-import org.example.modular.mst.parameter.paramOut.Mst0001InitResult;
-import org.example.modular.mst.service.Mst0001Service;
+import org.example.modular.mst.mst0001.parameter.paramOut.Mst0001InitResult;
+import org.example.modular.mst.mst0001.service.Mst0001Service;
+import org.example.modular.mst.mst0001.parameter.paramIn.Mst0001InitParam;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.transaction.annotation.Transactional;
@@ -22,8 +22,8 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2025-07-01
  */
 @RestController
-@RequestMapping(name = "[MST0001]MST0001管理", value = "/mst0001")
-@Api(tags = "[MST0001]MST0001")
+@RequestMapping(name = "[MST0001]DB检索", value = "/mst0001")
+@Api(tags = "[MST0001]DB检索")
 public class Mst0001Controller {
 
     @Autowired

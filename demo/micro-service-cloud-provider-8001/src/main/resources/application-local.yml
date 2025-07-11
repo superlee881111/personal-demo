@@ -48,16 +48,16 @@ logging:
     max-size: 10MB
     name:
 
-# 文件存储服务器
+## 文件存储服务器
 ##文件上传路径配置
 #yunnuo:
 #  profile: D:/src/demo/upload
-#minio配置
-#minio:
-#  endpoint: http://192.168.1.6:9000   #默认端口9000
-#  accessKey: minioadmin #默认用户名
-#  secretKey: minioadmin #默认密码
-#  bucketName: my-bucket #桶名
+# minio配置
+minio:
+  endpoint: http://192.168.1.2:9000   #默认端口9000
+  accessKey: minioadmin #默认用户名
+  secretKey: minioadmin #默认密码
+  bucketName: my-bucket #桶名
 
 
 #生产环境开启swagger

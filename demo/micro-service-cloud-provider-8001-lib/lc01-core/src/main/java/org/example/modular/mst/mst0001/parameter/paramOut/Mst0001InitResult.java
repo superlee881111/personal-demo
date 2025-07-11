@@ -1,4 +1,4 @@
-package org.example.modular.mst.parameter.paramOut;
+package org.example.modular.mst.mst0001.parameter.paramOut;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
