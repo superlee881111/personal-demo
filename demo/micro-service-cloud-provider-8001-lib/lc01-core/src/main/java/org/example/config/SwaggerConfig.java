@@ -16,10 +16,10 @@ import springfox.documentation.spring.web.plugins.Docket;
 public class SwaggerConfig {
 
     @Bean
-    public Docket webApiConfig(){
+    public Docket webMstApiConfig(){
         return new Docket(DocumentationType.OAS_30)
                 // 如果配置多个文档的时候，那么需要配置groupName来分组标识
-                .groupName("webApi")
+                .groupName("webMstApi")
                 .enable(true)
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("org.example.modular.mst"))
@@ -27,10 +27,21 @@ public class SwaggerConfig {
     }
 
     @Bean
-    public Docket webApiConfigG1(){
+    public Docket webDevApiConfig(){
         return new Docket(DocumentationType.OAS_30)
                 // 如果配置多个文档的时候，那么需要配置groupName来分组标识
-                .groupName("webApi2")
+                .groupName("webDevApi")
+                .enable(true)
+                .select()
+                .apis(RequestHandlerSelectors.basePackage("org.example.modular.dev"))
+                .build();
+    }
+
+    @Bean
+    public Docket webSysApiConfig(){
+        return new Docket(DocumentationType.OAS_30)
+                // 如果配置多个文档的时候，那么需要配置groupName来分组标识
+                .groupName("webSysApi")
                 .enable(true)
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("org.example.modular.sys"))
