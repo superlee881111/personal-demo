@@ -1,10 +1,13 @@
 package org.example.common.db.util;
 
+import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.generator.config.GlobalConfig;
+import com.baomidou.mybatisplus.generator.config.builder.GeneratorBuilder;
 import com.baomidou.mybatisplus.generator.config.converts.PostgreSqlTypeConvert;
 import com.baomidou.mybatisplus.generator.config.rules.DateType;
 import com.baomidou.mybatisplus.generator.config.rules.IColumnType;
 import org.apache.ibatis.datasource.DataSourceException;
+import org.example.common.db.sqls.TableFieldListSql;
 import org.example.common.db.sqls.TableListSql;
 import org.example.common.db.table.entity.SysDatabaseInfo;
 import org.slf4j.Logger;
@@ -70,87 +73,87 @@ public class DbUtil {
         }
     }
 
-//    public static List<SysDatabaseInfo> getTableFields(Connection conn, String tableName) {
-//        ArrayList fieldList = new ArrayList();
-//
-//        try {
-//            String sql = (new TableFieldListSql()).getSql("postgresql");
-//            sql = String.format(sql, tableName);
-//            PreparedStatement preparedStatement = conn.prepareStatement(sql);
-//            ResultSet resultSet = preparedStatement.executeQuery();
-//
-//            while(resultSet.next()) {
-//                TableFieldInfo tableFieldInfo = new TableFieldInfo();
-//                String columnName = resultSet.getString("columnName");
-//                String columnComment = resultSet.getString("columnComment");
-//                String dbType = resultSet.getString("columnType");
-//                PostgreSqlTypeConvert convert = new PostgreSqlTypeConvert();
-//                GlobalConfig globalConfig = GeneratorBuilder.globalConfigBuilder().dateType(DateType.ONLY_DATE).build();
-//                IColumnType iColumnType = convert.processTypeConvert(globalConfig, dbType);
-//                tableFieldInfo.setColumnType(iColumnType.getType());
-//                tableFieldInfo.setColumnName(columnName);
-//                tableFieldInfo.setColumnComment(columnComment);
-//                tableFieldInfo.setCamelFieldName(StrUtil.toCamelCase(columnName));
-//                fieldList.add(tableFieldInfo);
-//            }
-//
-//            return fieldList;
-//        } catch (Exception var13) {
-//            log.error("該当テーブル全部カラム内容の取得が異常終了しました！", var13);
-//            throw new DataSourceException(DataSourceExceptionEnum.QUERY_DATASOURCE_INFO_ERROR);
-//        }
-//    }
-//
-//    public static List<TableFieldInfo> getTableFields(SysDatabaseInfo dbInfo, String tableName) {
-//        ArrayList fieldList = new ArrayList();
-//
-//        try {
-//            Class.forName(dbInfo.getJdbcDriver());
-//            Connection conn = DriverManager.getConnection(dbInfo.getJdbcUrl(), dbInfo.getUserName(), dbInfo.getPassword());
-//            String sql = (new TableFieldListSql()).getSql(dbInfo.getJdbcUrl());
-//            if (dbInfo.getJdbcUrl().contains("postgresql")) {
-//                sql = String.format(sql, tableName);
-//            }
-//
-//            PreparedStatement preparedStatement = conn.prepareStatement(sql);
-//            if (dbInfo.getJdbcUrl().contains("oracle")) {
-//                preparedStatement.setString(1, tableName);
-//            } else if (!dbInfo.getJdbcUrl().contains("postgresql")) {
-//                if (dbInfo.getJdbcUrl().contains("sqlserver")) {
-//                    preparedStatement.setString(1, tableName);
-//                } else {
-//                    String dbName = getDbName(dbInfo);
-//                    preparedStatement.setString(1, tableName);
-//                    preparedStatement.setString(2, dbName);
-//                }
-//            }
-//
-//            ResultSet resultSet = preparedStatement.executeQuery();
-//
-//            while(resultSet.next()) {
-//                TableFieldInfo tableFieldInfo = new TableFieldInfo();
-//                String columnName = resultSet.getString("columnName");
-//                String columnComment = resultSet.getString("columnComment");
-//                if (dbInfo.getJdbcUrl().contains("postgresql")) {
-//                    String dbType = resultSet.getString("columnType");
-//                    PostgreSqlTypeConvert convert = new PostgreSqlTypeConvert();
-//                    GlobalConfig globalConfig = GeneratorBuilder.globalConfigBuilder().dateType(DateType.ONLY_DATE).build();
-//                    IColumnType iColumnType = convert.processTypeConvert(globalConfig, dbType);
-//                    tableFieldInfo.setColumnType(iColumnType.getType());
-//                }
-//
-//                tableFieldInfo.setColumnName(columnName);
-//                tableFieldInfo.setColumnComment(columnComment);
-//                tableFieldInfo.setCamelFieldName(StrUtil.toCamelCase(columnName));
-//                fieldList.add(tableFieldInfo);
-//            }
-//
-//            return fieldList;
-//        } catch (Exception var14) {
-//            log.error("該当テーブル全部カラム内容の取得が異常終了しました！", var14);
-//            throw new DataSourceException(DataSourceExceptionEnum.QUERY_DATASOURCE_INFO_ERROR);
-//        }
-//    }
+    public static List<SysDatabaseInfo> getTableFields(Connection conn, String tableName) {
+        ArrayList fieldList = new ArrayList();
+
+        try {
+            String sql = (new TableFieldListSql()).getSql("postgresql");
+            sql = String.format(sql, tableName);
+            PreparedStatement preparedStatement = conn.prepareStatement(sql);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while(resultSet.next()) {
+                TableFieldInfo tableFieldInfo = new TableFieldInfo();
+                String columnName = resultSet.getString("columnName");
+                String columnComment = resultSet.getString("columnComment");
+                String dbType = resultSet.getString("columnType");
+                PostgreSqlTypeConvert convert = new PostgreSqlTypeConvert();
+                GlobalConfig globalConfig = GeneratorBuilder.globalConfigBuilder().dateType(DateType.ONLY_DATE).build();
+                IColumnType iColumnType = convert.processTypeConvert(globalConfig, dbType);
+                tableFieldInfo.setColumnType(iColumnType.getType());
+                tableFieldInfo.setColumnName(columnName);
+                tableFieldInfo.setColumnComment(columnComment);
+                tableFieldInfo.setCamelFieldName(StrUtil.toCamelCase(columnName));
+                fieldList.add(tableFieldInfo);
+            }
+
+            return fieldList;
+        } catch (Exception var13) {
+            log.error("該当テーブル全部カラム内容の取得が異常終了しました！", var13);
+            throw new DataSourceException("異常終了しました！");
+        }
+    }
+
+    public static List<TableFieldInfo> getTableFields(SysDatabaseInfo dbInfo, String tableName) {
+        ArrayList fieldList = new ArrayList();
+
+        try {
+            Class.forName(dbInfo.getJdbcDriver());
+            Connection conn = DriverManager.getConnection(dbInfo.getJdbcUrl(), dbInfo.getUserName(), dbInfo.getPassword());
+            String sql = (new TableFieldListSql()).getSql(dbInfo.getJdbcUrl());
+            if (dbInfo.getJdbcUrl().contains("postgresql")) {
+                sql = String.format(sql, tableName);
+            }
+
+            PreparedStatement preparedStatement = conn.prepareStatement(sql);
+            if (dbInfo.getJdbcUrl().contains("oracle")) {
+                preparedStatement.setString(1, tableName);
+            } else if (!dbInfo.getJdbcUrl().contains("postgresql")) {
+                if (dbInfo.getJdbcUrl().contains("sqlserver")) {
+                    preparedStatement.setString(1, tableName);
+                } else {
+                    String dbName = getDbName(dbInfo);
+                    preparedStatement.setString(1, tableName);
+                    preparedStatement.setString(2, dbName);
+                }
+            }
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while(resultSet.next()) {
+                TableFieldInfo tableFieldInfo = new TableFieldInfo();
+                String columnName = resultSet.getString("columnName");
+                String columnComment = resultSet.getString("columnComment");
+                if (dbInfo.getJdbcUrl().contains("postgresql")) {
+                    String dbType = resultSet.getString("columnType");
+                    PostgreSqlTypeConvert convert = new PostgreSqlTypeConvert();
+                    GlobalConfig globalConfig = GeneratorBuilder.globalConfigBuilder().dateType(DateType.ONLY_DATE).build();
+                    IColumnType iColumnType = convert.processTypeConvert(globalConfig, dbType);
+                    tableFieldInfo.setColumnType(iColumnType.getType());
+                }
+
+                tableFieldInfo.setColumnName(columnName);
+                tableFieldInfo.setColumnComment(columnComment);
+                tableFieldInfo.setCamelFieldName(StrUtil.toCamelCase(columnName));
+                fieldList.add(tableFieldInfo);
+            }
+
+            return fieldList;
+        } catch (Exception var14) {
+            log.error("該当テーブル全部カラム内容の取得が異常終了しました！", var14);
+            throw new DataSourceException("異常終了しました！");
+        }
+    }
 //
 //    public static void createDatabase(SysDatabaseInfo dbInfo, String databaseName) {
 //        try {
@@ -166,7 +169,7 @@ public class DbUtil {
 //            throw new ServiceException(500, "create multi tenant-execute sql error！");
 //        }
 //    }
-//
+
     private static String getDbName(SysDatabaseInfo dbInfo) {
         if (dbInfo.getJdbcUrl().contains("oracle")) {
             return dbInfo.getUserName();

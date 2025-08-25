@@ -1,8 +1,8 @@
-package org.example.modular.dev.dev0001.controlller.service;
+package org.example.modular.dev.dev0001.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import org.example.modular.mst.mst0001.parameter.paramIn.Mst0001InitParam;
-import org.example.modular.mst.mst0001.parameter.paramOut.Mst0001InitResult;
+import org.example.config.CustomFieldConfig;
+import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 import java.util.Map;
@@ -23,4 +23,9 @@ public interface GenerateService extends IService<Object> {
      * @since 2025-07-01
      */
     List<Map<String, Object>> getTables(Long dataSourceId);
+
+    List<CustomFieldConfig> getDefaultTableFields(Long dataSourceId, String tableName);
+
+    ResponseEntity execute(Long generatorId);
+
 }

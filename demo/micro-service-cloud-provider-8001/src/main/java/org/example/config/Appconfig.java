@@ -11,6 +11,7 @@ import org.springframework.context.annotation.Import;
         RedisConfig.class,
         SwaggerConfig.class,
         MinioConfig.class,
+        CustomFieldConfig.class,
 })
 public class Appconfig {
 
